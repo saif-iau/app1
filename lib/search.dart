@@ -12,6 +12,21 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   List<widgetTiles> mylist = [];
 
+  void addshow(String name) async {
+    List<String> temp = await fetch().getdata(name) as List<String>;
+    print(temp);
+    setState(() {
+      mylist.add(widgetTiles(
+        name: name,
+        genre: temp[0],
+        language: temp[1],
+        rating: temp[2],
+        status: temp[3],
+        image: temp[4],
+      ));
+    });
+  }
+
   final TextEditingController userInput = TextEditingController();
 
   @override
@@ -21,7 +36,7 @@ class _SearchState extends State<Search> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 116, 6, 6),
         leading: const Icon(Icons.live_tv_rounded),
-        title: const Text('API application'),
+        title: const Text('TV show fnder'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
