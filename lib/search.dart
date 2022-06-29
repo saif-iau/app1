@@ -47,6 +47,7 @@ class _SearchState extends State<Search> {
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
                   child: TextFormField(
+                    cursorColor: Color.fromARGB(255, 148, 13, 4),
                     controller: userInput,
                     decoration: const InputDecoration(
                       hintText: "Enter a show",
@@ -73,6 +74,7 @@ class _SearchState extends State<Search> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 141, 17, 8),
         onPressed: () {
           setState(() {
             if (userInput.text.trim().isNotEmpty) {

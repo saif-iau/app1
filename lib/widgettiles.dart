@@ -23,16 +23,29 @@ class widgetTiles extends StatelessWidget {
       color: const Color.fromARGB(255, 156, 36, 6),
       child: Card(
         child: ListTile(
+          onTap: () {},
           leading: Text(name),
           trailing: Container(
             child: Image.network(image),
           ),
           subtitle: Column(
             children: [
-              Text('Rating : ' + rating),
-              Text('language : ' + language),
-              Text('Status : ' + status),
-              Text('Genre : ' + genre),
+              Text(
+                'Rating : ' + rating,
+                style: TextStyle(color: Color.fromARGB(255, 129, 6, 6)),
+              ),
+              Text(
+                'Language : ' + language,
+                style: TextStyle(color: Color.fromARGB(255, 129, 6, 6)),
+              ),
+              Text(
+                'Status : ' + status,
+                style: TextStyle(color: Color.fromARGB(255, 129, 6, 6)),
+              ),
+              Text(
+                'Genre : ' + genre,
+                style: TextStyle(color: Color.fromARGB(255, 129, 6, 6)),
+              ),
             ],
           ),
         ),
